@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Coleira CSS - Controle</title>
+    <style>
+        :root {
+            --discord-dark: #36393f;
+            --discord-grey: #2f3136;
+            --discord-blue: #5865f2;
+            --text-white: #ffffff;
+            --text-muted: #b9bbbe;
+        }
+
+        body {
+            background-color: #202225;
+            color: var(--text-white);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: var(--discord-dark);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: var(--text-white);
+        }
+
+        .input-group {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            background-color: #202225;
+            border: 1px solid #1a1b1e;
+            border-radius: 3px;
+            color: var(--text-white);
+            box-sizing: border-box;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--discord-blue);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--discord-blue);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #4752c4;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>⛓️ Painel Coleira CSS</h2>
+    <form action="/ligar" method="POST">
+        <div class="input-group">
+            <label>Seu Token (Conta que vai puxar)</label>
+            <input type="password" name="token" placeholder="Insira o Token do Discord" required>
+        </div>
+        
+        <div class="input-group">
+            <label>ID do Dono (Quem manda)</label>
+            <input type="text" name="donoId" placeholder="ID do usuário que terá a posse" required>
+        </div>
+
+        <div class="input-group">
+            <label>ID do Alvo (Quem entra na coleira)</label>
+            <input type="text" name="alvoId" placeholder="ID de quem será puxado" required>
+        </div>
+
+        <button type="submit">ATIVAR SISTEMA</button>
+    </form>
+    <div class="footer">
+        Status: <span style="color: #3ba55d;">Sistema Pronto</span>
+    </div>
+</div>
+
+</body>
+</html>
